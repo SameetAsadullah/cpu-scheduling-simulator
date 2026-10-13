@@ -40,7 +40,7 @@ Select an algorithm from the interactive menu. Results are written to `build/pro
 
 ## Workload format
 
-The repository includes separate samples for Round Robin, FCFS, and SJF in `src`.
+The repository includes clearly named workloads for Round Robin, FCFS, and SJF in `examples`.
 
 - The first line identifies the scheduling algorithm.
 - The second line provides the Round Robin quantum where applicable.

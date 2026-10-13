@@ -32,15 +32,15 @@ int main(int argc, char *argv[]) {
 	cout << endl;
 
 	if (num == 1) {
-		fd = open("Sample_1_RR.txt", O_RDONLY);
+		fd = open("round-robin.txt", O_RDONLY);
 	}
 
 	else if (num == 2) {
-		fd = open("Sample_2_FCFS.txt", O_RDONLY);
+		fd = open("first-come-first-served.txt", O_RDONLY);
 	}
 
 	else if (num == 3) {
-		fd = open("Sample_4_SJF.txt", O_RDONLY);
+		fd = open("shortest-job-first.txt", O_RDONLY);
 	}
 
 	read(fd, str, sizeof(str));	//Reading from file to string

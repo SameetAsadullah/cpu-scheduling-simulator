@@ -1,10 +1,5 @@
 build/
-src/a.out
-src/blocked
-src/exit
-src/new
-src/ready
-src/running
-src/MYPIPE*
-src/processes_stats.txt
+*.out
+MYPIPE*
+processes_stats.txt
 .DS_Store
