@@ -1,0 +1,24 @@
+name: C++ build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Compile all simulator processes
+        run: make
+
+      - name: Verify expected executables
+        run: test -x build/simulator && test -x build/new && test -x build/ready && test -x build/running && test -x build/blocked && test -x build/exit
+
+      - name: Check whitespace
+        run: git diff --check

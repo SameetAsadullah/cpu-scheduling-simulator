@@ -1,38 +1,65 @@
-<h1 align="center">CPU Scheduling Simulator</h1>
+# Five-State CPU Scheduling Simulator
 
-### Description
-`C++ Program` to simulate different `Operating System Scheduling Algorithms` using dup/dup2, fork, exec, and inter-process communication primitives. 
+A Linux C++ simulation of the operating-system process lifecycle. Instead of representing states only as objects, the project implements **new, ready, running, blocked, and exit as separate Unix processes** connected with pipes and named FIFOs.
 
-### Algorithms Implemented
-- Round Robin (RR)
-- First Come First Serve (FCFS)
+![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
+![Linux](https://img.shields.io/badge/platform-Linux-FCC624?logo=linux&logoColor=black)
+![Build](https://github.com/SameetAsadullah/CPU-Scheduling-Simulator/actions/workflows/build.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+## Scheduling algorithms
+
+- First-Come, First-Served (FCFS)
 - Shortest Job First (SJF)
+- Round Robin (RR) with a configurable quantum
 
-### Manual
-1) Use the following command to `Compile the Code`:
-    ```
-    g++ 5_state_model_simulator.cpp
-    ```
+## Systems concepts demonstrated
 
-2) Use the following command to `Run the Code`:
-    ```
-    ./a.out
-    ```
-3) You can `Change Processes` in the files named as Sample_1_RR.txt, Sample_2_FCFS.txt, Sample_4_SJF.txt. Its format is given below:
-    - First line indicates scheduling algorithm to perform.
-    - Second line indicates quantum for RR.
-    - Further lines indicate process number, its arrival time, and its cpu burst required.
-4) You can see `Final Output` i.e, throughput, average waiting time, average turnaround time in the file named as `processes_stats.txt`
-    
-### Working Screenshots
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/CPU-Scheduling-Simulator/blob/main/extras/working-ss-1.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/CPU-Scheduling-Simulator/blob/main/extras/working-ss-2.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/CPU-Scheduling-Simulator/blob/main/extras/working-ss-3.png" alt = "" width="700px"/>
-</div>
+- Five-state process lifecycle
+- `fork` and `exec` process creation
+- Anonymous pipes and named FIFOs
+- File-descriptor manipulation with `dup`/`dup2`
+- Inter-process transfer of process-control data
+- Ready queues, CPU bursts, blocking, and completion
+- Throughput, waiting-time, and turnaround-time reporting
+
+See [Architecture](docs/ARCHITECTURE.md) for the responsibilities of each executable and their communication flow.
+
+## Build and run
+
+The simulator uses POSIX APIs and should be built on Linux.
+
+```bash
+make
+make run
+```
+
+`make` creates six executables and copies the sample workloads into `build`. `make run` starts the simulator from that directory so its cooperating executables and input files resolve correctly.
+
+Select an algorithm from the interactive menu. Results are written to `build/processes_stats.txt`.
+
+## Workload format
+
+The repository includes separate samples for Round Robin, FCFS, and SJF in `src`.
+
+- The first line identifies the scheduling algorithm.
+- The second line provides the Round Robin quantum where applicable.
+- Each remaining line defines a process number, arrival time, and required CPU burst.
+
+Generated executables, FIFOs, and result files are intentionally excluded from version control.
+
+## Screenshots
+
+| Simulation | State transitions |
+| --- | --- |
+| ![Scheduling simulation](extras/working-ss-1.png) | ![Process state output](extras/working-ss-2.png) |
+
+![Final scheduling statistics](extras/working-ss-3.png)
+
+## Project status
+
+This repository preserves the original operating-systems project. The application logic remains intact; repository changes focus on reproducible compilation, portability, documentation, and generated-file hygiene.
+
+## License
+
+Licensed under the [MIT License](LICENSE).
