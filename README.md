@@ -4,7 +4,7 @@ A Linux C++ simulation of the operating-system process lifecycle. Instead of rep
 
 ![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
 ![Linux](https://img.shields.io/badge/platform-Linux-FCC624?logo=linux&logoColor=black)
-![Build](https://github.com/SameetAsadullah/CPU-Scheduling-Simulator/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/SameetAsadullah/cpu-scheduling-simulator/actions/workflows/build.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Scheduling algorithms
