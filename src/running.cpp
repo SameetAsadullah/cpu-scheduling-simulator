@@ -10,7 +10,6 @@
 #include<time.h>
 #include<queue>
 #include<vector>
-#include<bits/stdc++.h>
 using namespace std;
 
 struct proc{

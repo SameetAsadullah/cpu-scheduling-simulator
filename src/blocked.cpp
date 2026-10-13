@@ -8,7 +8,7 @@
 #include<string>
 #include<cstdlib>
 #include<time.h>
-#include<bits/stdc++.h>
+#include<queue>
 using namespace std;
 
 struct proc{

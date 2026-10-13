@@ -7,7 +7,7 @@
 #include<fcntl.h>
 #include<queue>
 #include<vector>
-#include<bits/stdc++.h> 
+#include<algorithm>
 using namespace std;
 
 struct proc{
